@@ -32,3 +32,8 @@ del p2.age
 # how to create an class with no keys // use pass to prevent error when declaring class
 class Animal:
     pass
+
+class Student():
+    name = 'Mark'
+    age = 33
+    gender = 'male'
