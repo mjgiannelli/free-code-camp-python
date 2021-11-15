@@ -43,8 +43,10 @@
   <!-- check if user is logged in -->
   {% if user.is_authenticated %}
   <h1>Welcome, {{user.username}}!</h1>
+  <li><a href="/logout">Logout</a></li>
   {% else %}
   <h1>Welcome! Login to see your Dashboard!</h1>
+  <li><a href="/login">Login</a></li>
   {% endif %}
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
