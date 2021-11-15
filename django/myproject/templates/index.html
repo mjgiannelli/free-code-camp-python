@@ -1,3 +1,6 @@
+<!-- to get django to recognize the link we need to add a static reference and load it -->
+{% load static %}
+<link rel='stylesheet' href="{% static 'style.css' %}">
 <h1>Input your text below: </h1>
 
 <!-- method are for your post and get route calls and action is the url path you want the action to take place in -->
