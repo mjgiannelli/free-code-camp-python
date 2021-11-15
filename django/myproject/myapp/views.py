@@ -99,3 +99,7 @@ def login(request):
 def logout(request):
     auth.logout(request)
     return redirect('/')
+
+# this is to set up a dynamic url - 'pk' variable comes from url definition
+def post(request, pk):
+    return render(request, 'post.html', {'pk': pk})

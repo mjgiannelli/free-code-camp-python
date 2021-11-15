@@ -10,5 +10,7 @@ urlpatterns = [
     path('counter', views.counter, name='counter'),
     path('register', views.register, name='register'),
     path('login', views.login, name='login'),
-    path('logout', views.logout, name='logout')
+    path('logout', views.logout, name='logout'),
+    # dynamic url path - variable named 'pk' and we are making it a 'str'
+    path('post/<str:pk>', views.post, name='post')
 ]
