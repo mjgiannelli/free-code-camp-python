@@ -1,4 +1,14 @@
 <!-- pass the key not the value from the dictionary -->
-<h1>
+<!-- <h1>
     The amount of words are {{amount}}
-</h1>
+</h1> -->
+
+<!-- can create dynamic urls both ways -->
+
+{% for post in posts %}
+<li><a href="{% url 'post' post %}">{{post}}</a></li>
+{% endfor %}
+<br>
+{% for post in posts %}
+<li><a href="/post/{{post}}">{{post}}</a></li>
+{% endfor %}

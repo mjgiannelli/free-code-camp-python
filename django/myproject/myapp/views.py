@@ -46,11 +46,15 @@ def index(request):
     features = Feature.objects.all()
     return render(request, 'index.html', {'features': features})
 
+# def counter(request):
+#     # to collect the words user is submitting in the form: get 'text' bc it's the same name attribute in the text area
+#     text = request.POST['text']
+#     amount_of_words = len(text.split())
+#     return render(request, 'counter.html', {'amount': amount_of_words})
+
 def counter(request):
-    # to collect the words user is submitting in the form: get 'text' bc it's the same name attribute in the text area
-    text = request.POST['text']
-    amount_of_words = len(text.split())
-    return render(request, 'counter.html', {'amount': amount_of_words})
+    posts = [1, 2, 3, 4, 'Mark', 'John', 'Jeff', 'Amy']
+    return render(request, 'counter.html', {'posts': posts})
 
 def register(request):
     if request.method == 'POST':
