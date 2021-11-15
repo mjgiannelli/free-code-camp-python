@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 # in order to save info to User model in database and use auth method
-from django.contrib.auth.models import User
-from django.contrib.auth import authenticate
+from django.contrib.auth.models import User, auth
 from django.contrib import messages
 # import your models (database api) to the views to pass to template
 from .models import Feature
@@ -81,4 +80,18 @@ def register(request):
         return render(request, 'register.html')
 
 def login(request):
-    return render(request, 'login.html')
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+
+        user = auth.authenticate(username=username, password=password)
+
+        #check if user is in our db aka 'not None'
+        if user is not None:
+            auth.login(request, user)
+            return redirect('/')
+        else:
+            messages.info(request, 'Credentials Invalid')
+            return redirect('login')
+    else:
+        return render(request, 'login.html')
