@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'myapp.apps.MyappConfig',
+    #registers app into main project/need to add before intergrating databases
+    'myapp',
 ]
 
 MIDDLEWARE = [
