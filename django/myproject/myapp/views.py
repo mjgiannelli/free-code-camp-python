@@ -55,7 +55,7 @@ def counter(request):
 
 def register(request):
     if request.method == 'POST':
-        username = request.POST['text']
+        username = request.POST['username']
         email = request.POST['email']
         password = request.POST['password']
         password2 = request.POST['password2']
