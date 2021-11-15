@@ -7,5 +7,6 @@ urlpatterns = [
     # 2nd param is a funtion called index you are importing used to render the html page. imported from the views.py file. Whatever index produces will be rendered to the user
     # 3rd param name gives the url path a name - usually the same as the function that is being imported from the views file
     path('', views.index, name='index'),
-    path('counter', views.counter, name='counter')
+    path('counter', views.counter, name='counter'),
+    path('register', views.register, name='register')
 ]
