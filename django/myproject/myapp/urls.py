@@ -8,5 +8,6 @@ urlpatterns = [
     # 3rd param name gives the url path a name - usually the same as the function that is being imported from the views file
     path('', views.index, name='index'),
     path('counter', views.counter, name='counter'),
-    path('register', views.register, name='register')
+    path('register', views.register, name='register'),
+    path('login', views.login, name='login')
 ]
