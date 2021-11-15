@@ -1,7 +1,11 @@
 <h1>Input your text below: </h1>
 
 <!-- method are for your post and get route calls and action is the url path you want the action to take place in -->
-<form method="" action="counter">
+<!-- get method will show the information into the url -->
+<!-- post method will prevent data being passed from showing up in the url -->
+<form method="POST" action="counter">
+    <!-- when running a post request in django, you need a CRSF token set up to prevent attackers from stealing info -->
+    {% csrf_token %}
     <textarea name='text' rows="25" cols="100"></textarea><br>
     <input type="submit"/>
 </form>
